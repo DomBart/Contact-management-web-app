@@ -1,0 +1,221 @@
+body {
+    background-color: #282828;
+    color: #f3f3f3;
+    overflow-x: hidden;
+    padding: 0;
+    margin: 0;
+    font-family: 'Roboto';
+}
+
+h1{
+    font-family: 'Raleway';
+    font-weight: bold;
+    text-transform: uppercase;
+    text-align: center;
+    margin-top: 5vh;
+    font-size: 5rem;
+}
+
+#title{
+    font-size: 5vw;
+}
+
+.contact-container{
+    font-size: 2vw;
+    color: #ffffff;
+    margin-top: 5vh;
+    width: 90%;
+    margin: auto;
+    padding-bottom: 5vh;
+}
+
+.contact-row{
+    display: flex;
+}
+
+.contact-column {
+    background-color: rgba(70,130,180,0.7);
+    margin: 5px;
+    padding: 25px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    border-radius: 5px;
+}
+
+.contact-fname{
+    flex-basis: 10%;
+}
+
+.contact-lname {
+    flex-basis: 10%;
+}
+
+.contact-date{
+    flex-basis: 10%;
+}
+
+.contact-phone{
+    flex-basis: 12%;
+}
+
+.contact-email {
+    flex-basis: 16%;
+}
+
+.contact-address {
+    flex-grow: 2;
+    flex-basis: 10%;
+}
+
+.contact-header {
+    background-color: rgba(70,130,180,1);
+    font-weight: bolder;
+}
+
+.contact-edit, .contact-delete, .contact-add{
+    flex-basis: 5%;
+    text-align: center;
+    cursor: pointer;
+}
+
+.contact-add{
+    font-size: 26px;
+}
+
+.contact-delete:hover{
+    color: indianred;
+}
+
+.contact-edit:hover{
+    color: lightblue;
+}
+
+.contact-add:hover {
+    color: lightgreen;
+}
+
+#addContactModal {
+    position: absolute;
+    width: 80vw;
+    padding: 10px;
+    border-radius: 3px;
+    z-index: 99;
+    top: 50px;
+    margin-left: 10vw;
+    background-color: steelblue;
+}
+
+#modal-title{
+    font-size: 3vw;
+}
+
+#addContactModal label{
+    font-size: 3vw;
+    margin-left: 10%;
+}
+
+#addContactModal input {
+    display: block;
+    font-size: 26px;
+    margin-bottom: 15px;
+    margin-top: 5px;
+    padding: 20px;
+    border-radius: 5px;
+    border: none;
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#backdrop{
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.6);
+    position: fixed;
+    z-index: 10;
+    top: 0;
+    left: 0;
+}
+
+.button-modal {
+    display: inline-block;
+    float: right;
+    padding: 0.35em 1.2em;
+    border: 0.1em solid #FFFFFF;
+    margin: 25px 0.5em 0.5em 0;
+    cursor: pointer;
+    border-radius: 0.24em;
+    box-sizing: border-box;
+    text-decoration: none;
+    font-family: 'Roboto',sans-serif;
+    font-weight: 300;
+    font-size: 26px;
+    color: #FFFFFF;
+    text-align: center;
+    transition: all 0.2s;
+    background-color: transparent;
+}
+
+    #newSubmit:hover {
+        background-color: forestgreen;
+    }
+
+    #newClear{
+        margin-right: 30%;
+    }
+
+    #newClear:hover {
+        background-color: red;
+    }
+
+#newClose{
+    position: absolute;
+    border: none;
+    background: none;
+    font-size: 32px;
+    color: white;
+    top: 20px;
+    right: 20px;
+}
+
+    #newClose:hover {
+        color: red;
+        cursor: pointer;
+    }
+
+.disable-modal {
+    visibility: hidden;
+}
+
+.enable-modal {
+    visibility: visible;
+}
+
+i {
+    pointer-events: none;
+}
+
+@media(min-width:1000px) {
+    .contact-container{
+        font-size: 1vw;
+        width: 80%;
+    }
+    .contact-column {
+        padding: 15px;
+    }
+    #addContactModal label {
+        font-size: 1vw;
+    }
+    #addContactModal input {
+        padding: 10px;
+        font-size: 18px;
+    }
+    .button-modal {
+        font-size: 18px;
+        margin: 10px 0.5em 0.5em 0;
+    }
+    #newClear {
+        margin-right: 10%;
+    }
+    }
