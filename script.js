@@ -149,7 +149,7 @@ function updateTable() {
                     'address': nAddress
                 }
                 localStorage.setItem(tableK, JSON.stringify(cntTable));
-                newSubmitBtn.removeEventListener();
+                newSubmitForm.removeEventListener();
                 closeModal();
                 updateTable();
             }
