@@ -20,7 +20,7 @@ let demo = {
     }
 };
 
-let newSubmitBtn = document.getElementById('newSubmit');
+let newSubmitForm = document.getElementById('ContactForm');
 
 //Enabling and cleaning up add contact modal once ContactAdd button is pressed
 function addToggle() {
@@ -111,7 +111,7 @@ function updateTable() {
     }
 
     // Add contact modal data parse and validation once submit is pressed
-    newSubmitBtn.addEventListener("click", function () {
+    newSubmitForm.addEventListener("submit", function () {
         let nFirstName = document.getElementById('newFirstname').value.trim();
         let nLastName = document.getElementById('newLastname').value.trim();
         let nDate = document.getElementById('newDate').value.trim();
@@ -122,9 +122,10 @@ function updateTable() {
         let nPhoneCheck = false;
         let nEmailCheck = false;
 
-        if (nFirstName !== '' && nLastName !== '' && nDate !== '' && nPhone !== '' && nEmail !== '') {
+        let nPhoneDis = document.getElementById('newPhone').disabled;
+
             // Checking if new entry has no data with matching email or phone
-            if (document.getElementById('newPhone').disabled === false) {
+            if (nPhoneDis === false) {
                 for (let i = 0; i < tableKeys.length; i++) {
                     if (nEmail === cntTable[tableKeys[i]].email)
                         nEmailCheck = true;
@@ -148,10 +149,10 @@ function updateTable() {
                     'address': nAddress
                 }
                 localStorage.setItem(tableK, JSON.stringify(cntTable));
+                newSubmitBtn.removeEventListener();
                 closeModal();
                 updateTable();
             }
-        }
     });
 
     let editBtns = document.getElementsByClassName('contact-edit');
